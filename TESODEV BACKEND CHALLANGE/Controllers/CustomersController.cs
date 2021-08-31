@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
+using System.Threading;
 using System.Threading.Tasks;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
@@ -19,20 +20,28 @@ namespace TESODEV_BACKEND_CHALLANGE.Controllers
     public class CustomersController : ControllerBase
     {
         private readonly IMediator _mediator;
-        private readonly ShoppingContext _context;
 
 
-        public CustomersController(IMediator mediator,ShoppingContext context)
+        public CustomersController(IMediator mediator)
         {
             _mediator = mediator ?? throw new ArgumentNullException(nameof(mediator));
-            _context =context;
+            
         }
-        
+
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([FromBody] CustomerDto request)
+        public async Task<IActionResult> Create([FromBody] CustomerRequest request)
         {
-            var customer=await _mediator.Send(new CreateCustomerCommand(request.Name,request.Email,request.AddressId));
+            var customer = await _mediator.Send(new CreateCustomerCommand(request.Name, request.Email,request.AddressLine,request.City,request.Country,request.CityCode));
+
+
+            return Ok(customer);
+        }
+
+
+        [HttpPut("{customerId}")]
+        public async Task<IActionResult> Update(int customerId,[FromBody] CustomerRequest request)
+        {
+            var customer = await _mediator.Send(new UpdateCustomerCommand(customerId,request.Name, request.Email, request.AddressLine, request.City, request.Country, request.CityCode));
 
 
             return Ok(customer);
@@ -40,15 +49,39 @@ namespace TESODEV_BACKEND_CHALLANGE.Controllers
 
 
         [HttpGet("{customerId}")]
-        [ValidateAntiForgeryToken]
-
-        public ActionResult<Customer> Get( int customerId)
+        public async Task<ActionResult<Customer>> Get(int customerId, CancellationToken cancellationToken)
         {
 
-            var customer =  _context.Customers.FirstOrDefaultAsync(x=>x.Id==customerId);
+
+            var customer = await _mediator.Send(new GetCustomerDetailsQuery(customerId));
 
 
             return Ok(customer);
+        }
+
+
+        [HttpGet]
+        public async Task<ActionResult<Customer>> GetAll(CancellationToken cancellationToken)
+        {
+
+
+            var customer = await _mediator.Send(new GetAllCustomerQuery());
+
+
+            return Ok(customer);
+        }
+
+
+
+        [HttpDelete("{customerId}")]
+        public async Task<ActionResult<Customer>> Delete(int customerId, CancellationToken cancellationToken)
+        {
+
+
+            var customer = await _mediator.Send(new DeleteCustomerCommand(customerId));
+
+
+            return NoContent();
         }
 
 

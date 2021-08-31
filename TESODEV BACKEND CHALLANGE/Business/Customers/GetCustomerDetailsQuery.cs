@@ -11,7 +11,7 @@ using TESODEV_BACKEND_CHALLANGE.Models.Customers;
 
 namespace TESODEV_BACKEND_CHALLANGE.Business.Customers
 {
-    public class GetCustomerDetailsQuery:IQuery<Customer>
+    public class GetCustomerDetailsQuery:IQuery<List<Customer>>
     {
         public GetCustomerDetailsQuery(int customerId)
         {
@@ -22,7 +22,7 @@ namespace TESODEV_BACKEND_CHALLANGE.Business.Customers
 
     }
 
-    public class GetCustomerDetailsQueryHandler : IQueryHandler<GetCustomerDetailsQuery, Customer>
+    public class GetCustomerDetailsQueryHandler : IQueryHandler<GetCustomerDetailsQuery, List<Customer>>
     {
         private readonly ShoppingContext _context;
 
@@ -32,9 +32,9 @@ namespace TESODEV_BACKEND_CHALLANGE.Business.Customers
             _context = context;
         }
 
-        public async Task<Customer> Handle(GetCustomerDetailsQuery request, CancellationToken cancellationToken)
+        public async Task<List<Customer>> Handle(GetCustomerDetailsQuery request, CancellationToken cancellationToken)
         {
-            var customer = await _context.Customers.FirstOrDefaultAsync((x => x.Id == request.CustomerId));
+            var customer = await _context.Customers.ToListAsync();
 
               return customer;
 

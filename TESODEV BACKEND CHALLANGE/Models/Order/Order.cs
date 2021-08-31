@@ -19,41 +19,44 @@ namespace TESODEV_BACKEND_CHALLANGE.Models
         public double Price { get; set; }
 
         public string Status { get; set; }
+
+        public int AddressId { get; set; }
         public Address Address { get; set; }
+
+        public int ProductId { get; set; }
         public Product Product { get; set; }
-        public DateTime CreatedAt { get; set; }
-        public  DateTime UpdatedAt { get; set; }
+        public DateTime? CreatedAt { get; set; }
+        public  DateTime? UpdatedAt { get; set; }
 
 
         private Order() { 
         
         }
 
-        public Order(int ıd, int customerId, Customer customer, int quantitiy, double price, string status, Address address, Product product)
+        public Order(int customerId, int quantitiy, double price, string status, int productId,int addressId)
         {
-            Id = ıd;
+
             CustomerId = customerId;
             Quantitiy = quantitiy;
             Price = price;
             Status = status;
-            Address = address;
-            Product = product;
+            AddressId = addressId;
+            ProductId = productId;
             CreatedAt = DateTime.Today;
         }
 
 
-        public static Order Create(int ıd, int customerId, Customer customer, int quantitiy, double price, string status, Address address, Product product)
+        public static Order Create( int customerId,  int quantitiy, double price, string status, int productId, int addressId)
         {
 
-            return new Order(ıd, customerId, customer, quantitiy, price, status, address, product);
+            return new Order(customerId, quantitiy, price, status, productId,addressId);
         }
 
-        public  Order Update(int quantitiy, double price, Address address, Product product) {
+        public  Order Update(int quantitiy, double price, int productId) {
 
             Quantitiy = quantitiy;
             Price = price;
-            Address = address;
-            Product = product;
+            ProductId = productId;
             UpdatedAt = DateTime.Today;
 
             return this;

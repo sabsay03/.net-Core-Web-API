@@ -1,20 +1,15 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using TESODEV_BACKEND_CHALLANGE.Data;
 using Microsoft.OpenApi.Models;
 using MediatR;
 using Microsoft.AspNetCore.Http;
+using AutoMapper;
+using System;
 
 namespace TESODEV_BACKEND_CHALLANGE
 {
@@ -31,14 +26,16 @@ namespace TESODEV_BACKEND_CHALLANGE
         public void ConfigureServices(IServiceCollection services)
         {
 
-           
-           services.AddDbContext<ShoppingContext>(options =>
+            services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+
+
+            services.AddDbContext<ShoppingContext>(options =>
                     options.UseSqlServer(Configuration.GetConnectionString("AdminConncetString")));
 
 
-       
+            services.AddMediatR(typeof(Startup).Assembly);
 
-
+        
 
             services.AddControllers().ConfigureApiBehaviorOptions(options =>
             {
@@ -48,6 +45,8 @@ namespace TESODEV_BACKEND_CHALLANGE
                 options.SuppressMapClientErrors = true;
                 options.ClientErrorMapping[StatusCodes.Status404NotFound].Link =
                     "https://httpstatuses.com/404";
+            }).AddNewtonsoftJson(s => {
+                s.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
             });
 
             services.AddMvc();

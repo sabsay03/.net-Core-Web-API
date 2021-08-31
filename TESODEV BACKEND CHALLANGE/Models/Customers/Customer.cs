@@ -15,15 +15,15 @@ namespace TESODEV_BACKEND_CHALLANGE.Models.Customers
         public string Email { get; set; }
         public int AddressId { get; set; }
         public Address address { get; set;}
-        public DateTime CreatedAt { get; set; }
-        public DateTime UpdatedAt { get; set; }
+        public DateTime? CreatedAt { get; set; }
+        public DateTime? UpdatedAt { get; set; }
         public ICollection<Order> Orders  { get; set; }
 
 
 
         public Customer(string name, string email,int addressId)
         {
- 
+            
             Name = name;
             Email = email;
             AddressId = addressId;

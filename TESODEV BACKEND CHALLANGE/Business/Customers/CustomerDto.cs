@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using TESODEV_BACKEND_CHALLANGE.Business.Orders;
 using TESODEV_BACKEND_CHALLANGE.Models;
 
 namespace TESODEV_BACKEND_CHALLANGE.Business.Customers
@@ -13,6 +14,8 @@ namespace TESODEV_BACKEND_CHALLANGE.Business.Customers
 
         public string Email { get; set; }
 
-        public int AddressId { get; set; }
+        public AddressDto address{ get; set; }
+
+        public ICollection<OrderDto> Orders { get; set; }
     }
 }

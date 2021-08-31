@@ -163,5 +163,10 @@ C:\Users\sabri\source\repos\TESODEV BACKEND CHALLANGE\TESODEV BACKEND CHALLANGE\
 C:\Users\sabri\source\repos\TESODEV BACKEND CHALLANGE\TESODEV BACKEND CHALLANGE\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.Swagger.dll
 C:\Users\sabri\source\repos\TESODEV BACKEND CHALLANGE\TESODEV BACKEND CHALLANGE\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\sabri\source\repos\TESODEV BACKEND CHALLANGE\TESODEV BACKEND CHALLANGE\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerUI.dll
-C:\Users\sabri\source\repos\TESODEV BACKEND CHALLANGE\TESODEV BACKEND CHALLANGE\obj\Debug\netcoreapp3.1\TESODEV BACKEND CHALLANGE.csprojAssemblyReference.cache
 C:\Users\sabri\source\repos\TESODEV BACKEND CHALLANGE\TESODEV BACKEND CHALLANGE\bin\Debug\netcoreapp3.1\MediatR.Extensions.Microsoft.DependencyInjection.dll
+C:\Users\sabri\source\repos\TESODEV BACKEND CHALLANGE\TESODEV BACKEND CHALLANGE\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.JsonPatch.dll
+C:\Users\sabri\source\repos\TESODEV BACKEND CHALLANGE\TESODEV BACKEND CHALLANGE\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+C:\Users\sabri\source\repos\TESODEV BACKEND CHALLANGE\TESODEV BACKEND CHALLANGE\bin\Debug\netcoreapp3.1\Newtonsoft.Json.Bson.dll
+C:\Users\sabri\source\repos\TESODEV BACKEND CHALLANGE\TESODEV BACKEND CHALLANGE\bin\Debug\netcoreapp3.1\AutoMapper.dll
+C:\Users\sabri\source\repos\TESODEV BACKEND CHALLANGE\TESODEV BACKEND CHALLANGE\bin\Debug\netcoreapp3.1\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+C:\Users\sabri\source\repos\TESODEV BACKEND CHALLANGE\TESODEV BACKEND CHALLANGE\obj\Debug\netcoreapp3.1\TESODEV BACKEND CHALLANGE.csprojAssemblyReference.cache

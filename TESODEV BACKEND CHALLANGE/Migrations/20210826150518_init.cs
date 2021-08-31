@@ -72,8 +72,8 @@ namespace TESODEV_BACKEND_CHALLANGE.Migrations
                     Status = table.Column<string>(nullable: true),
                     AddressId = table.Column<int>(nullable: true),
                     ProductId = table.Column<int>(nullable: true),
-                    CreatedAt = table.Column<DateTime>(nullable: false),
-                    UpdatedAt = table.Column<DateTime>(nullable: false)
+                    CreatedAt = table.Column<DateTime>(nullable: true),
+                    UpdatedAt = table.Column<DateTime>(nullable: true)
                 },
                 constraints: table =>
                 {
