@@ -1,12 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "gCExnqWjuFXQn8+fSlkmSt/Txk+1NaJeeC3n0Cbh4BJZZ35W5GsNap+pumK0erDe/EG8gVIAwWLxQWYZ5lBnwg==",
+  "dgSpecHash": "KFgXza8rOTWf0gqPKHw3rgmqk2QryLs/WM8cdMiwrTjRA+Mls4kSvi0g2pytRZLQevkkEgw5e+GjtPwPn/83jA==",
   "success": true,
   "projectFilePath": "C:\\Users\\sabri\\source\\repos\\sabsay03\\.net-Core-Web-API\\TESODEV BACKEND CHALLANGE\\TESODEV BACKEND CHALLANGE.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\sabri\\.nuget\\packages\\automapper\\10.1.1\\automapper.10.1.1.nupkg.sha512",
     "C:\\Users\\sabri\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\8.1.1\\automapper.extensions.microsoft.dependencyinjection.8.1.1.nupkg.sha512",
     "C:\\Users\\sabri\\.nuget\\packages\\fluentvalidation\\10.3.3\\fluentvalidation.10.3.3.nupkg.sha512",
+    "C:\\Users\\sabri\\.nuget\\packages\\fluentvalidation.aspnetcore\\10.3.3\\fluentvalidation.aspnetcore.10.3.3.nupkg.sha512",
+    "C:\\Users\\sabri\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\10.3.3\\fluentvalidation.dependencyinjectionextensions.10.3.3.nupkg.sha512",
     "C:\\Users\\sabri\\.nuget\\packages\\mediatr\\9.0.0\\mediatr.9.0.0.nupkg.sha512",
     "C:\\Users\\sabri\\.nuget\\packages\\mediatr.extensions.microsoft.dependencyinjection\\9.0.0\\mediatr.extensions.microsoft.dependencyinjection.9.0.0.nupkg.sha512",
     "C:\\Users\\sabri\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\3.1.15\\microsoft.aspnetcore.cryptography.internal.3.1.15.nupkg.sha512",
